@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AUF Tirol – Aktiv und Fit Tirol</title>
+  <meta name="description" content="Dusan Djokic – Mobile Hauspflege, Seniorentraining für Mobilität und gesundheitsorientiertes Training mit Elementen aus dem Kampfsport in Tirol." />
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --panel: rgba(255,255,255,0.05);
+      --panel-strong: #121212;
+      --text: #ffffff;
+      --muted: rgba(255,255,255,0.72);
+      --soft: rgba(255,255,255,0.5);
+      --border: rgba(255,255,255,0.1);
+      --accent: #ffffff;
+      --shadow: 0 20px 50px rgba(0,0,0,0.28);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --max: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.10), transparent 28%),
+        linear-gradient(180deg, rgba(255,255,255,0.03), transparent 18%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 42px 0 70px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid, .two-col {
+      display: grid;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .hero-grid { grid-template-columns: 1.05fr 0.95fr; }
+    .two-col { grid-template-columns: 1fr 1fr; }
+
+    .badge {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05);
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-size: 12px;
+      color: rgba(255,255,255,0.82);
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 74px);
+      line-height: 1.05;
+      margin: 22px 0 0;
+      letter-spacing: -0.03em;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.12;
+      margin: 12px 0 0;
+      letter-spacing: -0.03em;
+    }
+
+    h3 {
+      font-size: 28px;
+      margin: 8px 0 0;
+      letter-spacing: -0.02em;
+    }
+
+    p.lead {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 18px;
+      margin: 24px 0 0;
+    }
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 18px;
+      padding: 14px 22px;
+      font-weight: 600;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: #fff; color: #111; }
+    .btn-secondary {
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      border-color: rgba(255,255,255,0.14);
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+    }
+
+    .card-inner {
+      background: var(--panel-strong);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+    }
+
+    .logo-wrap {
+      background: #fff;
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.22);
+    }
+
+    .logo-wrap img {
+      display: block;
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .pill-list, .value-grid, .card-grid, .audience-list, .contact-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .pill {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    section { padding: 74px 0; }
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--soft);
+      font-size: 12px;
+    }
+
+    .card-grid { grid-template-columns: repeat(3, 1fr); margin-top: 34px; }
+    .service-card, .audience-card, .value-card, .contact-card, .cta-box {
+      border-radius: 28px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+    }
+
+    .service-card, .audience-card, .contact-card, .cta-box { padding: 28px; }
+    .value-card { padding: 24px; background: var(--panel-strong); }
+    .audience-card, .contact-card { background: var(--panel-strong); }
+
+    .service-card p, .about p, .audience-card, .contact-card, .cta-box, .value-card {
+      color: var(--muted);
+    }
+
+    .about-band {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .value-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-link { text-decoration: none; color: inherit; }
+    .contact-title { color: var(--soft); font-size: 14px; }
+    .contact-value { color: #fff; font-size: 18px; font-weight: 600; margin-top: 4px; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: rgba(255,255,255,0.45);
+      padding: 24px 20px 40px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid, .two-col, .card-grid, .value-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 28px; }
+      section { padding: 56px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge">AUF – Aktiv und Fit Tirol</div>
+        <h1>Mobile Unterstützung und gesundheitsorientiertes Training</h1>
+        <p class="lead">
+          Dusan Djokic begleitet Menschen mit einem ganzheitlichen Ansatz: mobile Hauspflege,
+          Mobilitätstraining für Senioren und gesundheitsbezogene Bewegung mit Elementen aus dem Kampfsport.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#kontakt">Kontakt aufnehmen</a>
+          <a class="btn btn-secondary" href="#leistungen">Leistungen ansehen</a>
+        </div>
+      </div>
+      <div class="card" style="padding: 24px;">
+        <div class="card-inner">
+          <div class="logo-wrap">
+            <img src="logo.png" alt="AUF Tirol Logo" />
+          </div>
+          <div class="pill-list" style="margin-top: 22px;">
+            <div class="pill">Mobile Hauspflege</div>
+            <div class="pill">Senioren-Mobilitätstraining</div>
+            <div class="pill">Kampfsport im gesundheitlichen Bereich</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="leistungen">
+      <div class="container">
+        <div class="section-label">Leistungen</div>
+        <h2>Persönlich. Bewegungsorientiert. Nah am Menschen.</h2>
+        <div class="card-grid">
+          <article class="service-card">
+            <h3>Mobile Hauspflege</h3>
+            <p>
+              Persönliche und alltagsnahe Unterstützung direkt zuhause – mit Fokus auf Aktivierung,
+              Sicherheit und wertschätzende Begleitung im gewohnten Umfeld.
+            </p>
+          </article>
+          <article class="service-card">
+            <h3>Seniorentraining für Mobilität</h3>
+            <p>
+              Gezielte Einheiten zur Förderung von Beweglichkeit, Balance, Koordination und
+              Selbstständigkeit im Alltag – individuell, ruhig und gesundheitsorientiert aufgebaut.
+            </p>
+          </article>
+          <article class="service-card">
+            <h3>Kampfsport für Gesundheit</h3>
+            <p>
+              Gesundheitsorientiertes Training mit Elementen aus dem Kampfsport zur Verbesserung von
+              Körpergefühl, Stabilität, Reaktion und mentaler Stärke – angepasst an Leistungsniveau und Zielsetzung.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-band">
+      <div class="container two-col">
+        <div class="about">
+          <div class="section-label">Über das Angebot</div>
+          <h2>Aktiv bleiben, Sicherheit gewinnen, Lebensqualität stärken</h2>
+          <p class="lead" style="font-size: 17px; max-width: 680px;">
+            Das Angebot von Dusan Djokic richtet sich an Menschen, die im Alltag Unterstützung,
+            mehr Mobilität oder ein angepasstes Training für Gesundheit und Wohlbefinden suchen.
+            Im Mittelpunkt stehen Vertrauen, ein klares Gespür für individuelle Bedürfnisse und eine
+            Praxis, die sich am Menschen orientiert – nicht an Standardlösungen.
+          </p>
+        </div>
+        <div class="value-grid">
+          <div class="value-card"><strong>Individuell und persönlich</strong></div>
+          <div class="value-card"><strong>Mobil in ganz Tirol einsetzbar</strong></div>
+          <div class="value-card"><strong>Gesundheitsorientiert und alltagstauglich</strong></div>
+          <div class="value-card"><strong>Mit Respekt, Geduld und Motivation</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container two-col" style="align-items: start;">
+        <div style="display: flex; flex-direction: column; gap: 36px;">
+          <div class="card" style="padding: 28px;">
+            <div class="section-label">Für wen</div>
+            <h3>Zielgruppen</h3>
+            <div class="audience-list" style="margin-top: 22px;">
+              <div class="audience-card">Seniorinnen und Senioren, die ihre Beweglichkeit und Selbstständigkeit erhalten oder verbessern möchten</div>
+              <div class="audience-card">Menschen mit dem Wunsch nach persönlicher Unterstützung im häuslichen Umfeld</div>
+              <div class="audience-card">Personen, die ein gesundheitlich angepasstes Training mit Elementen aus dem Kampfsport suchen</div>
+            </div>
+          </div>
+          <img src="Bild%204.jpeg" alt="Aktiv und Fit Tirol - Training" style="width: 100%; border-radius: var(--radius-xl); box-shadow: var(--shadow); object-fit: cover; display: block;" />
+        </div>
+
+        <div class="card" id="kontakt" style="padding: 28px;">
+          <div class="section-label">Kontakt</div>
+          <h3>Unverbindlich anfragen</h3>
+          <p style="color: var(--muted); margin-top: 16px;">
+            Gerne können Sie eine Anfrage für ein persönliches Gespräch, ein Kennenlernen oder ein individuelles Angebot senden.
+          </p>
+          <div class="contact-grid" style="margin-top: 24px;">
+            <div class="contact-card">
+              <div class="contact-title">Ansprechperson</div>
+              <div class="contact-value">Dusan Djokic</div>
+            </div>
+            <div class="contact-card">
+              <div class="contact-title">Marke</div>
+              <div class="contact-value">AUF – Aktiv und Fit Tirol</div>
+            </div>
+            <a class="contact-card contact-link" href="tel:+436677639662">
+              <div class="contact-title">Telefon</div>
+              <div class="contact-value">+43 667 7639662</div>
+            </a>
+            <a class="contact-card contact-link" href="mailto:info@auf-tirol.at">
+              <div class="contact-title">E-Mail</div>
+              <div class="contact-value">info@auf-tirol.at</div>
+            </a>
+            <div class="cta-box">
+              <div class="section-label" style="letter-spacing: 0.22em;">Direkter Kontakt</div>
+              <p style="margin-top: 14px;">
+                Persönliche Betreuung, individuelle Einschätzung und ein Angebot abgestimmt auf Ihre Bedürfnisse.
+              </p>
+              <div class="actions" style="margin-top: 18px;">
+                <a class="btn btn-primary" href="tel:+436677639662">Jetzt anrufen</a>
+                <a class="btn btn-secondary" href="mailto:info@auf-tirol.at">E-Mail senden</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div style="margin-bottom: 8px;">
+      © AUF – Aktiv und Fit Tirol · Dusan Djokic · Kontakt: +43 667 7639662 · info@auf-tirol.at
+    </div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.45);">
+      <a href="impressum.html" style="color: inherit; text-decoration: none; margin: 0 6px;">Impressum</a> | 
+      <a href="datenschutz.html" style="color: inherit; text-decoration: none; margin: 0 6px;">Datenschutzerklärung</a>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum – AUF Tirol</title>
+  <meta name="description" content="Dusan Djokic – Mobile Hauspflege, Seniorentraining für Mobilität und gesundheitsorientiertes Training mit Elementen aus dem Kampfsport in Tirol." />
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --panel: rgba(255,255,255,0.05);
+      --panel-strong: #121212;
+      --text: #ffffff;
+      --muted: rgba(255,255,255,0.72);
+      --soft: rgba(255,255,255,0.5);
+      --border: rgba(255,255,255,0.1);
+      --accent: #ffffff;
+      --shadow: 0 20px 50px rgba(0,0,0,0.28);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --max: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.10), transparent 28%),
+        linear-gradient(180deg, rgba(255,255,255,0.03), transparent 18%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 42px 0 70px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid, .two-col {
+      display: grid;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .hero-grid { grid-template-columns: 1.05fr 0.95fr; }
+    .two-col { grid-template-columns: 1fr 1fr; }
+
+    .badge {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05);
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-size: 12px;
+      color: rgba(255,255,255,0.82);
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 74px);
+      line-height: 1.05;
+      margin: 22px 0 0;
+      letter-spacing: -0.03em;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.12;
+      margin: 12px 0 0;
+      letter-spacing: -0.03em;
+    }
+
+    h3 {
+      font-size: 28px;
+      margin: 8px 0 0;
+      letter-spacing: -0.02em;
+    }
+
+    p.lead {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 18px;
+      margin: 24px 0 0;
+    }
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 18px;
+      padding: 14px 22px;
+      font-weight: 600;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: #fff; color: #111; }
+    .btn-secondary {
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      border-color: rgba(255,255,255,0.14);
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+    }
+
+    .card-inner {
+      background: var(--panel-strong);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+    }
+
+    .logo-wrap {
+      background: #fff;
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.22);
+    }
+
+    .logo-wrap img {
+      display: block;
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .pill-list, .value-grid, .card-grid, .audience-list, .contact-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .pill {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    section { padding: 74px 0; }
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--soft);
+      font-size: 12px;
+    }
+
+    .card-grid { grid-template-columns: repeat(3, 1fr); margin-top: 34px; }
+    .service-card, .audience-card, .value-card, .contact-card, .cta-box {
+      border-radius: 28px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+    }
+
+    .service-card, .audience-card, .contact-card, .cta-box { padding: 28px; }
+    .value-card { padding: 24px; background: var(--panel-strong); }
+    .audience-card, .contact-card { background: var(--panel-strong); }
+
+    .service-card p, .about p, .audience-card, .contact-card, .cta-box, .value-card {
+      color: var(--muted);
+    }
+
+    .about-band {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .value-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-link { text-decoration: none; color: inherit; }
+    .contact-title { color: var(--soft); font-size: 14px; }
+    .contact-value { color: #fff; font-size: 18px; font-weight: 600; margin-top: 4px; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: rgba(255,255,255,0.45);
+      padding: 24px 20px 40px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid, .two-col, .card-grid, .value-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 28px; }
+      section { padding: 56px 0; }
+    }
+  </style>
+
+  <style>
+    .legal-page { padding: 80px 0; }
+    .legal-card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius-xl); box-shadow: var(--shadow); padding: 40px; margin-bottom: 40px; }
+    .legal-content h1 { font-size: 38px; margin: 0 0 30px; letter-spacing: -0.02em; }
+    .legal-content h2 { font-size: 26px; margin: 40px 0 16px; border-bottom: 1px solid var(--border); padding-bottom: 12px; }
+    .legal-content h3 { font-size: 20px; margin: 30px 0 12px; }
+    .legal-content p, .legal-content li { color: var(--muted); margin-bottom: 16px; font-size: 16px; line-height: 1.7; }
+    .legal-content a { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+    .legal-content a:hover { color: var(--text); }
+    .legal-content table { width: 100%; border-collapse: collapse; margin-top: 20px; margin-bottom: 30px; }
+    .legal-content th, .legal-content td { text-align: left; padding: 14px 16px; border: 1px solid var(--border); color: var(--muted); font-size: 15px; }
+    .legal-content th { background: rgba(255,255,255,0.05); color: var(--text); font-weight: 600; }
+    .legal-content td { background: var(--panel-strong); }
+    .back-btn-wrap { margin-bottom: 30px; }
+    .back-btn { display: inline-flex; align-items: center; gap: 8px; color: var(--text); text-decoration: none; font-weight: 500; padding: 12px 24px; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--panel); transition: 0.2s ease; font-size: 15px; }
+    .back-btn:hover { background: var(--panel-strong); border-color: rgba(255,255,255,0.2); transform: translateY(-1px); }
+  </style>
+
+</head>
+<body style="background: radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 28%), linear-gradient(180deg, rgba(255,255,255,0.02), transparent 18%), var(--bg);">
+  <main class="legal-page container">
+    <div class="back-btn-wrap">
+      <a href="auf-tirol-site_index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Zurück zur Startseite
+      </a>
+    </div>
+    <div class="legal-card legal-content">
+
+    <h1>Impressum</h1>
+    
+    <p><strong>Dusan Djokic</strong><br>
+    [Adresse, PLZ, Ort]</p>
+
+    <p><strong>Unternehmensgegenstand:</strong> []<br>
+    <strong>UID:</strong> [Umsatzsteuer ID einfügen (wenn vorhanden)]<br>
+    <strong>Tel.:</strong> [Telefonnummer einfügen]<br>
+    <strong>E-Mail:</strong> [Email einfügen]</p>
+
+    <p><strong>Mitglied bei:</strong> [Kammerorganisation einfügen (wenn vorhanden)]<br>
+    <strong>Berufsrecht:</strong> Gewerbeordnung: <a href="https://www.ris.bka.gv.at" target="_blank">www.ris.bka.gv.at</a><br>
+    <strong>Aufsichtsbehörde/Gewerbebehörde:</strong> [Bezirkshauptmannschaft einfügen]</p>
+    
+
+
+    <h2>EU-Streitschlichtung</h2>
+    <p>Gemäß Verordnung über Online-Streitbeilegung in Verbraucherangelegenheiten (ODR-Verordnung) möchten wir Sie über die Online-Streitbeilegungsplattform (OS-Plattform) informieren.<br>
+    Verbraucher haben die Möglichkeit, Beschwerden an die Online Streitbeilegungsplattform der Europäischen Kommission unter <a href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a> zu richten.<br>
+    Die dafür notwendigen Kontaktdaten finden Sie in unserem Impressum. Wir möchten Sie jedoch darauf hinweisen, dass wir nicht bereit oder verpflichtet sind, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+    <h2>Haftung für Inhalte dieser Website</h2>
+    <p>Wir entwickeln die Inhalte dieser Website ständig weiter und bemühen uns korrekte und aktuelle Informationen bereitzustellen. Leider können wir keine Haftung für die Korrektheit aller Inhalte auf dieser Website übernehmen, speziell für jene, die seitens Dritter bereitgestellt wurden.<br>
+    Als Diensteanbieter sind wir nicht verpflichtet, die von Ihnen übermittelten oder gespeicherten Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.<br>
+    Unsere Verpflichtungen zur Entfernung von Informationen oder zur Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen aufgrund von gerichtlichen oder behördlichen Anordnungen bleiben auch im Falle unserer Nichtverantwortlichkeit davon unberührt.<br>
+    Sollten Ihnen problematische oder rechtswidrige Inhalte auffallen, bitte wir Sie uns umgehend zu kontaktieren, damit wir die rechtswidrigen Inhalte entfernen können. Sie finden die Kontaktdaten im Impressum.</p>
+
+    <h2>Haftung für Links auf dieser Website</h2>
+    <p>Unsere Website enthält Links zu anderen Websites für deren Inhalt wir nicht verantwortlich sind. Haftung für verlinkte Websites besteht für uns nicht, da wir keine Kenntnis rechtswidriger Tätigkeiten hatten und haben, uns solche Rechtswidrigkeiten auch bisher nicht aufgefallen sind und wir Links sofort entfernen würden, wenn uns Rechtswidrigkeiten bekannt werden.<br>
+    Wenn Ihnen rechtswidrige Links auf unserer Website auffallen, bitte wir Sie uns zu kontaktieren. Sie finden die Kontaktdaten im Impressum.</p>
+
+    <h2>Urheberrechtshinweis</h2>
+    <p>Alle Inhalte dieser Webseite (Bilder, Fotos, Texte, Videos) unterliegen dem Urheberrecht. Bitte fragen Sie uns bevor Sie die Inhalte dieser Website verbreiten, vervielfältigen oder verwerten wie zum Beispiel auf anderen Websites erneut veröffentlichen. Falls notwendig, werden wir die unerlaubte Nutzung von Teilen der Inhalte unserer Seite rechtlich verfolgen.<br>
+    Sollten Sie auf dieser Webseite Inhalte finden, die das Urheberrecht verletzen, bitten wir Sie uns zu kontaktieren.</p>
+
+    <h2>Bildernachweis</h2>
+    <p>Die Bilder, Fotos und Grafiken auf dieser Webseite sind urheberrechtlich geschützt. Die Verwertungsrechte liegen bei: Dusan Djokic</p>
+    <p>[Bildnachweis], [Bildnachweis], [Bildnachweis]</p>
+    <p>Alle Texte sind urheberrechtlich geschützt.</p>
+
+    </div>
+  </main>
+<footer>
+    <div style="margin-bottom: 8px;">
+      © AUF – Aktiv und Fit Tirol · Dusan Djokic · Kontakt: +43 667 7639662 · info@auf-tirol.at
+    </div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.45);">
+      <a href="impressum.html" style="color: inherit; text-decoration: none; margin: 0 6px;">Impressum</a> | 
+      <a href="datenschutz.html" style="color: inherit; text-decoration: none; margin: 0 6px;">Datenschutzerklärung</a>
+    </div>
+  </footer>
+</body>
+</html>
